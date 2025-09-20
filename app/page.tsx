@@ -6,6 +6,7 @@ import Image from "next/image";
 import { GiSparkles } from "react-icons/gi";
 import { BsCode } from "react-icons/bs";
 import { CiShoppingCart } from "react-icons/ci";
+import Link from "next/link";
 // import { Sparkles, Code2, ShoppingCart } from "lucide-react";
 
 export default function LandingPage() {
@@ -49,7 +50,7 @@ export default function LandingPage() {
         </nav>
 
         {/* HERO */}
-        <section className="relative max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <section className="relative max-w-7xl mx-auto px-6 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Glow effect background */}
           <div className="absolute top-1/2 -left-20 w-[500px] h-[500px] rounded-full bg-pink-600/30 blur-[180px] -z-10" />
           <div className="absolute top-1/3 right-0 w-[400px] h-[400px] rounded-full bg-indigo-600/20 blur-[160px] -z-10" />
@@ -61,26 +62,17 @@ export default function LandingPage() {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            {/* Tag */}
-            <motion.p
-              whileHover={{ scale: 1.05, rotate: -1 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-xs font-semibold tracking-wide"
-            >
-              Era of Establishment
-            </motion.p>
-
             {/* Title */}
             <motion.h1
               whileInView={{ opacity: [0, 1], y: [20, 0] }}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight"
+              className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight"
             >
-              We design and build next-level digital products —{" "}
+              We build the stuff that matters,<br /> for your business & customers <br />
               <motion.span
                 animate={{ backgroundPosition: ["0% 50%", "100% 50%"] }}
                 transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
-                className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-amber-300 bg-[length:200%_200%]"
+                className="text-transparent text-4xl md:text-5xl bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-amber-300 bg-[length:200%_200%]"
               >
                 bespoke, fast, memorable.
               </motion.span>
@@ -90,10 +82,10 @@ export default function LandingPage() {
             <motion.p
               whileInView={{ opacity: [0, 1], y: [20, 0] }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-slate-300 max-w-xl"
+              className="text-slate-300 max-w-xl text-lg font-['Bahnschrift-Light']"
             >
-              Hybrid creates experiences that move culture. From music platforms to brand
-              sites, we focus on detail, speed and delight. Launch faster, scale easier.
+              We focus on detail, ROI and customer satisfaction.
+              Launch faster, scale easier. <br />Talk to us about how we can help your business grow.
             </motion.p>
 
             {/* Buttons */}
@@ -112,7 +104,7 @@ export default function LandingPage() {
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-slate-700 text-sm"
               >
-                View Case Studies
+                View Our Projects
               </motion.a>
             </div>
 
@@ -120,10 +112,11 @@ export default function LandingPage() {
             <motion.div
               whileInView={{ opacity: [0, 1], y: [20, 0] }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="mt-6 flex flex-wrap gap-4"
+              className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4"
             >
               <TrustBadge name="Studio X" subtitle="Music & Streaming" />
               <TrustBadge name="Nyasa Events" subtitle="Event Tech" />
+              <TrustBadge name="Oak Valley" subtitle="EdTech" />
               <TrustBadge name="Oak Valley" subtitle="EdTech" />
             </motion.div>
           </motion.div>
@@ -143,24 +136,24 @@ export default function LandingPage() {
         {/* SERVICES */}
         <section id="services" className="py-16 border-t border-slate-800">
           <div className="max-w-7xl mx-auto px-6 text-center">
-            <h2 className="text-3xl font-bold">What we build</h2>
+            <h2 className="text-3xl font-bold">What we do</h2>
             <p className="text-slate-400 mt-2 max-w-2xl mx-auto">
-              Productized engineering & design for music platforms, e-commerce and immersive web apps.
+              Productized engineering & design for entertainment platforms, e-commerce and immersive web apps.
             </p>
             <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-              <FeatureCard Icon={<GiSparkles size={30} />} title="Streaming & Players" desc="Robust playback, adaptive streaming, & sync across devices." />
-              <FeatureCard Icon={<BsCode size={30} />} title="Full-stack Web Apps" desc="Next.js, resilient APIs, and polished UX that scales." />
-              <FeatureCard Icon={<CiShoppingCart size={30} />} title="E-commerce & Tickets" desc="Fast checkout and local payment integrations." />
+              <FeatureCard Icon={<GiSparkles size={30} />} title="Streaming Web Apps" desc="Robust playback, adaptive streaming, & sync across devices." />
+              <FeatureCard Icon={<BsCode size={30} />} title="Full-stack Web Apps" desc="Custom and polished UX that scales. Everything we build ties back to your business' growth" />
+              <FeatureCard Icon={<CiShoppingCart size={30} />} title="E-commerce" desc="Get your business online and make more sales with our fast checkout and local payment integrations." />
             </div>
           </div>
         </section>
 
-        {/* CASE STUDIES */}
+        {/* projects */}
         <section id="work" className="py-16">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex items-center justify-between">
               <div>
-                <h2 className="text-2xl font-bold">Selected case studies</h2>
+                <h2 className="text-2xl font-bold">Our projects</h2>
                 <p className="text-slate-400 mt-1">High impact launches we’re proud of.</p>
               </div>
               <a href="#work" className="text-sm text-slate-300 underline">
@@ -173,18 +166,21 @@ export default function LandingPage() {
                 tag="Music & Streaming"
                 blurb="Design system, player, and native-feeling web app."
                 img="/images/x.png"
+                url={"https://xstudio.vercel.app/"}
               />
               <CaseStudyCard
-                title="Nyasa Live"
-                tag="Events & Ticketing"
-                blurb="Ticketing with QR-powered gates & analytics."
-                img="/images/demo-events.png"
+                title="Corporate Africa"
+                tag="Business & Events"
+                blurb="Business news and Events website ."
+                img="/images/news.png"
+                url={"https://clafrica.online/"}
               />
               <CaseStudyCard
-                title="Oak Academy"
+                title="Bloom Academy"
                 tag="EdTech"
                 blurb="Responsive learning platform with recordings manager."
-                img="/images/demo-edtech.png"
+                img="/images/bloom.png"
+                url={"https://bloom-eight-sable.vercel.app/tutors/dashboard"}
               />
             </div>
           </div>
@@ -289,23 +285,26 @@ function MockStudioWindow() {
   );
 }
 
-function CaseStudyCard({ title, tag, blurb, img }: { title: string; tag: string; blurb: string; img: string }) {
+function CaseStudyCard({ title, tag, blurb, img, url }: { title: string; tag: string; blurb: string; img: string; url: string }) {
   return (
     <motion.div
       whileHover={{ scale: 1.03 }}
       className="rounded-2xl overflow-hidden shadow-xl bg-slate-800/80 ring-1 ring-slate-700 hover:ring-violet-500/40 transition"
     >
-      <div className="relative w-full h-70">
-        <Image src={img} alt={title} fill className="object-cover object-top h-full" />
-      </div>
-      <div className="p-4 space-y-2">
-        <div className="flex items-center justify-between">
-          <div className="text-lg font-bold">{title}</div>
-          <div className="text-sm text-slate-400">{tag}</div>
+      <Link href={url} target="_blank">
+        <div className="relative w-full h-70  backdrop:backdrop-blur-2xl bg-white/50 p-4">
+          <Image src={img} alt={title} fill className="object-cover object-top-left h-[90%] w-[90%]" />
         </div>
-        <p className="text-slate-300">{blurb}</p>
-      </div>
+        <div className="p-4 space-y-2">
+          <div className="flex items-center justify-between">
+            <div className="text-lg font-bold">{title}</div>
+            <div className="text-sm text-slate-400">{tag}</div>
+          </div>
+          <p className="text-slate-300">{blurb}</p>
+        </div>
+      </Link>
     </motion.div>
+
   );
 }
 
@@ -339,9 +338,15 @@ function ContactForm() {
         <label className="block text-slate-300 text-sm font-medium">Project brief</label>
         <textarea className="mt-2 w-full rounded-md bg-slate-900 p-3 text-slate-100 h-28 focus:ring-2 focus:ring-pink-500 outline-none" placeholder="Short brief..." />
       </div>
-      <button type="submit" className="w-full px-5 py-3 rounded-full bg-gradient-to-r from-pink-600 to-violet-600 font-semibold shadow-lg hover:scale-105 transition">
-        Send Message
-      </button>
+      <motion.a
+        whileHover={{ scale: 1.08, boxShadow: "0px 0px 20px rgba(236,72,153,0.5)" }}
+        whileTap={{ scale: 0.96 }}
+        className="gap-2 px-6 py-3 rounded-full w-full bg-gradient-to-r from-pink-600 to-violet-600 font-semibold shadow-lg transition"
+      >
+        <button type="submit" className="  w-11/12 cursor-pointer">
+          Send Message
+        </button>
+      </motion.a>
     </form>
   );
 }
