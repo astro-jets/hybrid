@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { ReactElement } from "react";
 import Head from "next/head";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -7,7 +7,6 @@ import { GiSparkles } from "react-icons/gi";
 import { BsCode } from "react-icons/bs";
 import { CiShoppingCart } from "react-icons/ci";
 import Link from "next/link";
-import { IconType } from "react-icons";
 // import { Sparkles, Code2, ShoppingCart } from "lucide-react";
 
 export default function LandingPage() {
@@ -247,7 +246,7 @@ function TrustBadge({ name, subtitle }: { name: string; subtitle: string }) {
   );
 }
 
-function FeatureCard({ Icon, title, desc }: { Icon: IconType; title: string; desc: string }) {
+function FeatureCard({ Icon, title, desc }: { Icon: ReactElement; title: string; desc: string }) {
   return (
     <div className="p-6 rounded-2xl bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur ring-1 ring-slate-700 hover:ring-pink-500/40 transition shadow-lg">
       {Icon}
